@@ -1,0 +1,159 @@
+/* .open内のaタグを上下左右中央揃え */
+.open a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+html, body, .main-center {
+  box-sizing: border-box;
+}
+/* body全体を上下中央寄せにする */
+.main-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: auto;
+}
+
+.open {
+  border: 5px #4a4d4e solid;   /* 枠線を引く */
+  border-radius: 15px;      /* 角丸の指定 */
+  width: 60vw;
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto; /* 必要に応じて調整 */
+  background: #4a4d4e;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s;
+  flex-direction: column;
+}
+.open:hover {
+  border: 5px #313232 solid; /* オレンジ色の枠線に */
+  background: #313232;
+  box-shadow: 0 0 12px #ff980055;
+  cursor: pointer;
+}
+
+.footer {
+  font-family: 'DotGothic16', sans-serif;
+  font-weight: bold;
+  font-size: 2.2vh;
+  color: #000;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0 10px 0; /* 下に10pxの余白 */
+  background: none;
+  z-index: 10;
+  letter-spacing: 0.12em;
+}
+
+ .open p {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DotGothic16', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  font-size: 50px;
+  letter-spacing: 0.05em;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+
+.center-logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  height: auto;
+  padding-top: 2vh;
+  box-sizing: border-box;
+}
+
+.center-logo img {
+  max-width: 100vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  .center-logo img {
+    max-width: 900px;
+  }
+
+}
+h1{
+  text-align: center;
+}
+
+/* Noto Sans JPフォントを全体に適用 */
+html, body {
+  font-family: 'Noto Sans JP', 'sans-serif' !important;
+}
+
+/* ボタンやテキストにもNoto Sans JPを強制適用 */
+.button-row .open,
+.button-row .open p,
+.footer,
+h1 {
+  font-family: 'Noto Sans JP', 'sans-serif' !important;
+}
+
+/* 横並びボタン用ラッパー */
+.button-row {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+/* 横並び時のボタンサイズ調整 */
+.button-row .open {
+  width: 300px;
+  max-width: 90vw;
+  margin: 0;
+}
+
+/* プレビューエリアを横幅いっぱいに */
+#preview-area {
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  display: block; /* flexを解除 */
+  min-height: 260px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  align-items: unset;
+  justify-content: unset;
+}
+
+/* プレビュー動画を横幅いっぱいに */
+#preview-area video,
+#qr-video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  background: #222;
+}
